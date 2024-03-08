@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane fx:id="mainPanel" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.NetChat.client.Controller">
+
+
+    <Label text="Чат комната: root">
+      <font>
+         <Font name="System Bold" size="20.0" />
+      </font></Label>
+
+    <top>
+        <HBox fx:id="upperPanel" BorderPane.alignment="TOP_CENTER">
+        <TextField fx:id="loginField" promptText="Логин" />
+        <PasswordField fx:id="passField" onAction="#onAuthClick" promptText="Пароль" />
+        <Button fx:id="btnAuth" onAction="#onAuthClick" text="Авторизоваться" />
+    </HBox>
+    </top>
+
+    <center>
+        <TextArea fx:id="textArea" editable="false" prefHeight="191.0" prefWidth="348.0" VBox.vgrow="ALWAYS" />
+    </center>
+    <right>
+        <ListView fx:id="clientsList" onMouseClicked="#listClick" />
+
+
+
+
+    </right>
+
+
+    <bottom>
+        <HBox fx:id="bottomPanel" visible="false">
+            <TextField fx:id="textField" onAction="#onSendMsg" HBox.hgrow="ALWAYS" />
+            <Button onAction="#onSendMsg" text="Send Msg" />
+        </HBox>
+    </bottom>
+    <padding>
+
+    <Insets bottom="5" left="5" right="5" top="5" />
+    </padding>
+
+
+</BorderPane>
