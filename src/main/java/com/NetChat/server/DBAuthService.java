@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import java.sql.*;
 
-//@Component
+
 public class DBAuthService implements AuthService {
     private Connection connection;
     private PreparedStatement ps;

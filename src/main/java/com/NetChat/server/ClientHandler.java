@@ -11,7 +11,7 @@ import java.net.Socket;
 @Component
 @Scope("prototype")
 public class ClientHandler implements Runnable {
-// синглтон ли?
+
     //@Autowired
     private MyServer myServer;
 
@@ -86,8 +86,6 @@ public class ClientHandler implements Runnable {
 
                 myServer.broadcastMsg(name + ": " + str);
             }
-
-
 
         } catch (IOException e) {
             e.printStackTrace();

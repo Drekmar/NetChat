@@ -17,13 +17,13 @@ import java.util.concurrent.Executors;
 @Component
 public class MyServer {
     private ServerSocket server;
-   // @Autowired
-   // private ClientHandler ch;
-   // @Autowired
+    @Autowired
+    private ClientHandler ch;
+
     private Vector<ClientHandler> clients;
 
     @Autowired
-    @Qualifier("baseAuthService")
+    @Qualifier("BaseAuthService")
     private AuthService authService;
     private PrintWriter out;
 
@@ -35,8 +35,6 @@ public class MyServer {
 
         this.authService=authService;
 
-       // ApplicationContext ctx = new
-               // AnnotationConfigApplicationContext(SpringConfig.class);
 
         try {
 
@@ -76,6 +74,11 @@ public class MyServer {
             }
             authService.stop();
         }
+    }
+
+    public ServerSocket getServer() {
+
+        return server;
     }
 
     public AuthService getAuthService() {
