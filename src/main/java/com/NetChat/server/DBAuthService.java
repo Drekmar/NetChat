@@ -13,8 +13,8 @@ public class DBAuthService implements AuthService {
         try {
             Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection("jdbc:sqlite:chat.db");
-           psChNick=connection.prepareStatement("SELECT Nick FROM entries WHERE Login = ? AND Pass = ?;");
-            ps = connection.prepareStatement("UPDATE entries SET Nick = ? WHERE Nick = ? ");
+           psChNick=connection.prepareStatement("SELECT Nick FROM Users WHERE Login = ? AND Pass = ?;");
+            ps = connection.prepareStatement("UPDATE Users SET Nick = ? WHERE Nick = ? ");
         } catch (Exception e) {
             e.printStackTrace();
         }

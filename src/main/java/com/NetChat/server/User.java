@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Component
 @Scope("prototype")
 @Entity
-@Table(name = "users")
+@Table(name = "Users")
 public class User {
 
     @Id
