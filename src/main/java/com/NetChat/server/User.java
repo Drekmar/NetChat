@@ -18,7 +18,7 @@ private long id;
 private String nick;
     @Column(name="login")
 private  String login;
-    @Column(name = "pass")
+    @Column(name = "password")
 private String password;
 
     public User(String login, String password) {

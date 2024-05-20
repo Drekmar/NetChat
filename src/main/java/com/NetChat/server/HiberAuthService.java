@@ -21,8 +21,8 @@ public class HiberAuthService implements AuthService{
         Session session= null;
         session=sessionFactory.getCurrentSession();
         session.beginTransaction();
-        User user=session.get(User.class,pass);
-        User user1=session.createQuery("SELECT i FROM User i WHERE i.login=:login AND i.pass=:login",User.class)
+        // User user=session.get(User.class,pass);
+        User user1=session.createQuery("SELECT i FROM User i WHERE i.login=:login AND i.password=:login",User.class)
                 .setParameter(login,pass)
                 .getSingleResult();
         session.getTransaction().commit();
