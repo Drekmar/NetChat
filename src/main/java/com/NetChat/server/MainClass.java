@@ -7,7 +7,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.stereotype.Component;
 public class MainClass {
     public static void main(String[] args) {
-
+        Integer a = 23;
+        Integer b = 23;
+        int c = a + b;
+        System.out.println(c);
         ApplicationContext ctx = new
                 AnnotationConfigApplicationContext(SpringConfig.class);
         //new MyServer();

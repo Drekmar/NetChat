@@ -17,13 +17,13 @@ import java.util.concurrent.Executors;
 @Component
 public class MyServer {
     private ServerSocket server;
-    @Autowired
-    private ClientHandler ch;
 
+   // private ClientHandler ch;
+    @Autowired
     private Vector<ClientHandler> clients;
 
     @Autowired
-    @Qualifier("BaseAuthService")
+    @Qualifier("bas")
     private AuthService authService;
     private PrintWriter out;
 
@@ -65,7 +65,10 @@ public class MyServer {
 
         } catch (IOException e) {
             System.out.println("Ошибка при работе сервера");
-        } finally {
+        }
+
+
+        finally {
             try {
                 server.close();
                 out.close();

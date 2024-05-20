@@ -1,13 +1,15 @@
 package com.NetChat.server;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 @Component
+@Qualifier("bas")
 public class BaseAuthService implements AuthService {
     private static class Entry {
         private String login;
-        private String pass;
+        protected String pass;
         private String nick;
 
         public Entry(String login, String pass, String nick) {
@@ -34,6 +36,8 @@ public class BaseAuthService implements AuthService {
 
     @Override
     public String getNickByLoginPass(String login, String pass) {
+
+
         for (Entry o : entries) {
             if (o.login.equals(login) && o.pass.equals(pass)) return o.nick;
         }
@@ -49,6 +53,7 @@ public class BaseAuthService implements AuthService {
             }
 
         }
+        Class<String> objectClass = String.class;
 
         for (Entry o:entries ) {
             if (o.nick.equals(c.getName()) ) {

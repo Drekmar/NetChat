@@ -12,9 +12,9 @@ import java.net.Socket;
 @Scope("prototype")
 public class ClientHandler implements Runnable {
 
-    //@Autowired
-    private MyServer myServer;
 
+    private MyServer myServer;
+    //@Autowired
     private Socket socket;
     private DataInputStream in;
     private DataOutputStream out;
@@ -35,8 +35,6 @@ public class ClientHandler implements Runnable {
             throw new RuntimeException("Проблемы при создании обработчика клиента");
         }
     }
-
-
 
 
 
@@ -96,6 +94,7 @@ public class ClientHandler implements Runnable {
                 socket.close();
             } catch (IOException e) {
                 e.printStackTrace();
+
             }
         }
 

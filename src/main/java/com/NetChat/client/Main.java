@@ -9,14 +9,14 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 public class Main extends Application {
-    public static Stage mainStage;
+    public static Stage primaryStage;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
         Parent root = loader.load();
-        Controller controller =  loader.getController();
+        Controller controller = (Controller) loader.getController();
 
         primaryStage.setTitle("JavaFX Client");
         primaryStage.setScene(new Scene(root, 400, 400));
